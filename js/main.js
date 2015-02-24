@@ -1,6 +1,6 @@
-console.log("Javascript is alive!");
-var START_YEAR = 2025;
-var YEARS_WIDE = 6025;
+// Copyright (c) 2015 Jeffrey R Sprague
+
+var IMG_SIZE = 64;
 var DECADES = parseInt(YEARS_WIDE / 10) + 1;
 var tlPaused = true;
 var tlSpeed = 0.0;
@@ -15,8 +15,8 @@ window.onload = function() {
     // **************************************************
     var createElement = function(tag, id, className) {
         var elem = document.createElement(tag);
-        elem.id = id;
-        elem.className = className;
+        if (id) { elem.id = id; };
+        if (className) { elem.className = className; };
         return elem;
     };
 
@@ -52,6 +52,7 @@ window.onload = function() {
     // First tween is for the master timeline
     // Each 'year' is 10 pixels wide. At speed 1.0 we scroll at one pixel per frame, 60 frames per second
     tl.to('#tlSurface', (YEARS_WIDE * 10), { left: -((YEARS_WIDE * 10) - 500), ease: Linear.easeNone});
+
     // Create a DOM element for each item in the DATA list
     for (i = 0; i < DATA.length; i++) {
         var pos, width;
@@ -69,7 +70,7 @@ window.onload = function() {
         elem.style.opacity = 0.5;
         elem.textContent = DATA[i].name;
         if (DATA[i].sex == 'F') {
-            elem.style.backgroundColor = "#fac"
+            elem.style.backgroundColor = "#e9b"
         }
 
         // Create a timeline tween animation for each item in the DATA list
@@ -81,16 +82,18 @@ window.onload = function() {
         tlSurface.appendChild(elem);
     }
 
+    // Create a DOM element for each item in the IMAGE list
     for (i = 0; i < IMAGES.length; i++) {
-        var pos = (START_YEAR - IMAGES[i].year) * 10 - 48;
+        var pos = (START_YEAR - IMAGES[i].year) * 10 - (IMG_SIZE / 2);
 
         var elem = createElement('img', undefined, 'tlImage');
         elem.style.left = (pos + 'px');
+        elem.style.width = elem.style.height = (IMG_SIZE +'px');
         elem.src = "./resources/images/" + IMAGES[i].url;
 
         // Create a timeline tween animation for each item in the DATA list
-        tl.to(elem, 15, {scale: 1.33}, pos);
-        tl.to(elem, 15, {scale: 1.0}, pos + 80);
+        tl.to(elem, 15, {scale: 1.66}, pos);
+        tl.to(elem, 15, {scale: 1.0}, pos + (IMG_SIZE - 14));
 
         IMAGES[i].elem = elem;
         tlSurface.appendChild(elem);
@@ -152,4 +155,13 @@ window.onload = function() {
             tl.play();
         }
     };
+
+    var yearElem = document.getElementById('header');
+    var updateYear = function() {
+        var t = tl.time();
+        yearElem.textContent = parseInt(2025 - (t / 10));
+        slider.setValue(t / 10);
+        setTimeout(updateYear, 100);
+    }.bind(this);
+    updateYear();
 };
