@@ -1,0 +1,162 @@
+body {
+    background-color: #000811;
+}
+
+#screen {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0px;
+    width: 1000px;
+    height: 800px;
+    background-color: #012;
+    color: white;
+    font-size: 32px;
+    overflow: hidden;
+}
+
+#header {
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 32px;
+    background-color: #002244;
+    border-top: #eee 1px solid;
+    border-bottom: #eee 1px solid;
+    line-height: 1.9;
+}
+
+#footer {
+    position: absolute;
+    text-align: center;
+    top: 545px;
+    left: 0px;
+    width: 100%;
+    height: 75px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 32px;
+    background-color: #002244;
+    border-top: #eee 1px solid;
+    border-bottom: #eee 1px solid;
+    line-height: 1.9;
+}
+
+#tlPlayhead {
+    position: absolute;
+    top: 0%;
+    left: 499px;
+    width: 2px;
+    height: 390px;
+    background-color: yellow;
+    opacity: .5
+}
+
+#tlViewport {
+    position: absolute;
+    top: 75px;
+    width: 1000px;
+    height: 470px;
+    background-color: transparent;
+    color: white;
+    font-size: 32px;
+    overflow: hidden;
+}
+
+#tlSlider {
+    position: absolute;
+    top: 565px;
+    left: 50px;
+    width: 650px;
+    height: 35px;
+}
+
+#tlSpeed {
+    position: absolute;
+    top: 565px;
+    left: 750px;
+    width: 200px;
+    height: 35px;
+}
+
+#tlSurface {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.tlBar {
+    position: absolute;
+    top: 0px;
+    height: 25px;
+    background-color: #48F;
+    text-indent: 8px;
+    line-height: 1.8;
+    overflow: hidden;
+}
+
+#tlTickContainer {
+    position: absolute;
+    top: 400px;
+    height: 70px;
+    background-color: transparent;
+}
+
+.tlTickCell {
+    position: absolute;
+    top: 0px;
+    height: 70px;
+    width: 100px;
+    background-color: #001830;
+}
+
+.tlTickImg {
+    position: absolute;
+    top: 31px;
+    height: 34px;
+    width: 100px;
+    background-image: url('../resources/images/timeline.png');
+}
+
+.tlTickLabel {
+    position: absolute;
+    top: 5px;
+    height: 26px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 18pt;
+    background-color: transparent;
+}
+
+#sliderLabel {
+    position: absolute;
+    top: 594px;
+    left: 52px;
+    height: 26px;
+    width: 150px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 13pt;
+}
+
+#speedLabel {
+    position: absolute;
+    top: 594px;
+    left: 750px;
+    height: 26px;
+    width: 150px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 13pt;
+}
