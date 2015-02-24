@@ -160,3 +160,10 @@ body {
     font-family: sans-serif;
     font-size: 13pt;
 }
+
+.tlImage {
+    position: absolute;
+    top: 40px;
+    width: 96px;
+    height: 96px;
+}

@@ -1,4 +1,4 @@
-DATA = [
+var DATA = [
     {
         name: 'Dean Patrick Sprague',
         born: 1992,
@@ -64,6 +64,21 @@ DATA = [
         born: 1839,
         died: 1913,
         sex: 'F'
+    }
+];
+
+var IMAGES = [
+    {
+        url: 'macintosh.png',
+        year: 1984
+    },
+    {
+        url: 'moon.png',
+        year: 1969
+    },
+    {
+        url: 'ww2.png',
+        year: 1941
     }
 ];
 

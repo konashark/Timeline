@@ -81,6 +81,21 @@ window.onload = function() {
         tlSurface.appendChild(elem);
     }
 
+    for (i = 0; i < IMAGES.length; i++) {
+        var pos = (START_YEAR - IMAGES[i].year) * 10 - 48;
+
+        var elem = createElement('img', undefined, 'tlImage');
+        elem.style.left = (pos + 'px');
+        elem.src = "./resources/images/" + IMAGES[i].url;
+
+        // Create a timeline tween animation for each item in the DATA list
+        tl.to(elem, 15, {scale: 1.33}, pos);
+        tl.to(elem, 15, {scale: 1.0}, pos + 80);
+
+        IMAGES[i].elem = elem;
+        tlSurface.appendChild(elem);
+    }
+
     // This callback is invoked when the end of the timeline is reached
     tl.call(function () {
         tlPaused = true;
