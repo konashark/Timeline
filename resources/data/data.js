@@ -1,3 +1,4 @@
+var TIMELINE_TITLE = "Sprague Ancestry Timeline"
 var START_YEAR = 2025;
 var YEARS_WIDE = 6025;
 
@@ -27,7 +28,7 @@ var DATA = [
         sex: 'M'
     },
     {
-        name: 'Eileen Betty Moll',
+        name: 'Eileen Betty M',
         born: 1926,
         died: 2014,
         sex: 'F'

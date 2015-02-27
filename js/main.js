@@ -11,6 +11,8 @@ var i;
 
 window.onload = function() {
 
+    document.getElementById('tlTitle').textContent = TIMELINE_TITLE || "Timeline";
+
     // Utility function for creating DOM element
     // **************************************************
     var createElement = function(tag, id, className) {
